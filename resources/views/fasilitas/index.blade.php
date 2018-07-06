@@ -6,13 +6,12 @@
 		<div class="col-md-12">
 			<div class="panel panel-info">
 			<div class="m-b-10">
-                    <a href="{{ route('berita.create') }}" class="btn btn-outline-danger">
+                    <a href="{{ route('fasilitas.create') }}" class="btn btn-outline-danger">
                         <i class="fa fa-pencil-square-o"></i>    
                         Tambah Data
                     </a>
                     
                 </div>
-			</div>
 			</div>
 <div class="panel-body">
 	<div class="table-responsive">
@@ -20,28 +19,28 @@
 			<thead>
 				<tr>
 					<th>No</th>
-					<th>Tanggal</th>
-					<th>Judul</th>
-					<th>Isi Berita</th>
+					<th>Jenis Bus</th>
+					<th>Jenis Pesawat</th>
+					<th>Hotel Berbintang</th>
 					<th colspan="3">Action</th>
 				</tr>	
 </thead>
 <tbody>
 	@php $no = 1; @endphp
-	@foreach($beritas as $data)
+	@foreach($fasilitas as $data)
 	<tr>
 		<td> {{ $no++ }} </td>
-		<td> {{ $data->tanggal }} </td>
-		<td><p> {{ $data->judul }} </p></td>
-		<td><p> {{ $data->isi }} </p></td>	
+		<td> {{ $data->bus }} </td>
+		<td><p> {{ $data->pesawat }} </p></td>
+		<td><p> {{ $data->hotel }} </p></td>	
 	<td>
-		<a class="btn btn-primary" href=" {{ route('berita.edit',$data->id)}} ">Edit Data</a>
+		<a class="btn btn-primary" href=" {{ route('fasilitas.edit',$data->id)}} ">Edit Data</a>
 	</td>
 	<td>
-		<a class="btn btn-success" href=" {{ route('berita.show',$data->id)}} ">Lihat data</a>
+		<a class="btn btn-success" href=" {{ route('fasilitas.show',$data->id)}} ">Lihat data</a>
 	</td>
 	<td>
-							<form method="post" action="{{ route('berita.destroy',$data->id) }}">
+							<form method="post" action="{{ route('fasilitas.destroy',$data->id) }}">
 								<input name="_token" type="hidden" value="{{ csrf_token() }}">
 								<input type="hidden" name="_method" value="DELETE">
 

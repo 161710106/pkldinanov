@@ -5,37 +5,36 @@
 		<div class="col-md-12">
 			<div class="panel panel-primary">
 			<div class="m-b-10">
-                    <a href="{{ route('pembina.index') }}" class="btn btn-outline-danger">
-                        <i class="fa fa-pencil-square-o"></i>    
+                    <a href="{{ route('about.index') }}" class="btn btn-outline-danger">    
                        Kembali
                     </a>
                     
                 </div>
 			</div>
 			  <div class="panel-body">
-			  	<form action="{{ route('pembina.store') }}" method="post" >
+			  	<form action="{{ route('about.store') }}" method="post" >
 			  		{{ csrf_field() }}
-			  		<div class="form-group {{ $errors->has('nama') ? ' has-error' : '' }}">
-			  			<label class="control-label">nama</label>	
-			  			<input type="text" name="nama" class="form-control"  required>
-			  			@if ($errors->has('nama'))
+			  		<div class="form-group {{ $errors->has('sejarah') ? ' has-error' : '' }}">
+			  			<label class="control-label">Sejarah </label>	
+			  			<TextArea name="sejarah" class="form-control"  required></TextArea>
+			  			@if ($errors->has('sejarah'))
                             <span class="help-block">
-                                <strong>{{ $errors->first('nama') }}</strong>
+                                <strong>{{ $errors->first('sejarah') }}</strong>
                             </span>
                         @endif
 			  		</div>
 
-			  		<div class="form-group {{ $errors->has('jabatan') ? ' has-error' : '' }}">
-			  			<label class="control-label">jabatan </label>	
-			  			<input type="text" name="jabatan" class="form-control"  required>
-			  			@if ($errors->has('jabatan'))
+			  		<div class="form-group {{ $errors->has('visi_misi') ? ' has-error' : '' }}">
+			  			<label class="control-label">Visi & misi </label>	
+			  			<TextArea name="visi_misi" class="form-control"  required></TextArea>
+			  			@if ($errors->has('visi_misi'))
                             <span class="help-block">
-                                <strong>{{ $errors->first('jabatan') }}</strong>
+                                <strong>{{ $errors->first('visi_misi') }}</strong>
                             </span>
                         @endif
 			  		</div>
 
-			  		
+			  	
 
 			  		<button type="submit" class="btn btn-outline-primary"> 
                                     <i class="fa fa-check-circle fa-lg"></i>

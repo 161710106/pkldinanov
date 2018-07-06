@@ -5,9 +5,8 @@
 		<div class="col-md-12">
 			<div class="panel panel-primary">
 			<div class="m-b-10">
-                    <a href="{{ route('pembina.index') }}" class="btn btn-outline-danger">
-                        <i class="fa fa-pencil-square-o"></i>    
-                       Kembali
+                    <a href="{{ route('jadwal.index') }}" class="btn btn-outline-danger">
+                        Kembali
                     </a>
                     
                 </div>

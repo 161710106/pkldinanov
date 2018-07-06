@@ -4,10 +4,14 @@
 	<div class="container">
 		<div class="col-md-12">
 			<div class="panel panel-primary">
-			  <div class="panel-heading">
-			  	<div class="panel-title pull-right"><a href="{{ route('pembina.index') }}">Kembali</a>
-			  	</div>
-			  </div>
+			<div class="m-b-10">
+                    <a href="{{ route('pembina.create') }}" class="btn btn-outline-danger">
+                        <i class="fa fa-pencil-square-o"></i>    
+                       Tambah Data
+                    </a>
+                    
+                </div>
+			</div>
 			  <div class="panel-body">
 			  	<form action="{{ route('pembina.update',$pembinas->id) }}" method="post" >
 			  		<input name="_method" type="hidden" value="PATCH">
@@ -36,9 +40,14 @@
 			  		
 
 			  		
-			  		<div class="form-group">
-			  			<button type="submit" class="btn btn-primary">Edit</button>
-			  		</div>
+			  		<button type="submit" class="btn btn-outline-primary"> 
+                                    <i class="fa fa-check-circle fa-lg"></i>
+                                    Simpan
+                                </button>
+                                <button type="reset" class="btn btn-outline-danger"> 
+                                    <i class="fa  fa-exclamation-triangle fa-lg"></i>
+                                    Batal
+                                </button>
 			  	</form>
 			  </div>
 			</div>	

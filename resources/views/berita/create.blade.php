@@ -4,10 +4,14 @@
 	<div class="container">
 		<div class="col-md-12">
 			<div class="panel panel-primary">
-			  <div class="panel-heading"> 
-			  	<div class="panel-title pull-right"><a href="{{ route('berita.index') }}">Kembali</a>
-			  	</div>
-			  </div>
+			<div class="m-b-10">
+                    <a href="{{ route('berita.index') }}" class="btn btn-outline-danger">
+                          
+                        Kembali
+                    </a>
+                    
+                </div>
+			</div>
 			  <div class="panel-body">
 			  	<form action="{{ route('berita.store') }}" method="post" >
 			  		{{ csrf_field() }}
@@ -41,9 +45,14 @@
                         @endif
 			  		</div>
 
-			  		<div class="form-group">
-			  			<button type="submit" class="btn btn-primary">Tambah</button>
-			  		</div>
+			  		<button type="submit" class="btn btn-outline-primary"> 
+                                    <i class="fa fa-check-circle fa-lg"></i>
+                                    Simpan
+                                </button>
+                                <button type="reset" class="btn btn-outline-danger"> 
+                                    <i class="fa  fa-exclamation-triangle fa-lg"></i>
+                                    Batal
+                                </button>
 			  	</form>
 			  </div>
 			</div>	

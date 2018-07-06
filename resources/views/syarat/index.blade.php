@@ -6,9 +6,9 @@
 		<div class="col-md-12">
 			<div class="panel panel-info">
 			<div class="m-b-10">
-                    <a href="{{ route('berita.create') }}" class="btn btn-outline-danger">
+                    <a href="{{ route('syarat.create') }}" class="btn btn-outline-danger">
                         <i class="fa fa-pencil-square-o"></i>    
-                        Tambah Data
+                       Tambah Data
                     </a>
                     
                 </div>
@@ -20,28 +20,30 @@
 			<thead>
 				<tr>
 					<th>No</th>
-					<th>Tanggal</th>
-					<th>Judul</th>
-					<th>Isi Berita</th>
+					<th>Paket Termasuk</th>
+					<th>Paket Tidak Termasuk</th>
+					<th>Persyaratan Umroh</th>
+					<th>Menyerahkan Dp </th>
 					<th colspan="3">Action</th>
 				</tr>	
 </thead>
 <tbody>
 	@php $no = 1; @endphp
-	@foreach($beritas as $data)
+	@foreach($syarats as $data)
 	<tr>
 		<td> {{ $no++ }} </td>
-		<td> {{ $data->tanggal }} </td>
-		<td><p> {{ $data->judul }} </p></td>
-		<td><p> {{ $data->isi }} </p></td>	
+		<td> {{ $data->termasuk }} </td>
+		<td><p> {{ $data->tidak_termasuk }} </p></td>
+		<td><p> {{ $data->persyaratan }} </p></td>	
+		<td><p> {{ $data->dp }} </p></td>
 	<td>
-		<a class="btn btn-primary" href=" {{ route('berita.edit',$data->id)}} ">Edit Data</a>
+		<a class="btn btn-primary" href=" {{ route('syarat.edit',$data->id)}} ">Edit Data</a>
 	</td>
 	<td>
-		<a class="btn btn-success" href=" {{ route('berita.show',$data->id)}} ">Lihat data</a>
+		<a class="btn btn-success" href=" {{ route('syarat.show',$data->id)}} ">Lihat data</a>
 	</td>
 	<td>
-							<form method="post" action="{{ route('berita.destroy',$data->id) }}">
+							<form method="post" action="{{ route('syarat.destroy',$data->id) }}">
 								<input name="_token" type="hidden" value="{{ csrf_token() }}">
 								<input type="hidden" name="_method" value="DELETE">
 
